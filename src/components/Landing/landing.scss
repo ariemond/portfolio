@@ -1,0 +1,39 @@
+@import '../../styles/global.scss';
+
+
+figure { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  width: 80vw;
+  padding-top: 60%;
+  
+  @include tablet {
+    padding-top: 50%;
+    height: 10vh;
+  }
+
+  @include desktop {
+    padding-top: 15%;
+    height: 30vh;
+  }
+}
+
+.st0 {
+    fill: none;
+}
+
+svg {
+  padding: 5vw;
+  width: 90vw;
+  enable-background: new 0 0 1920 1080;
+}
+
+svg > * { 
+  fill: $primary-black;
+  stroke: $primary-black;
+  // stroke: white;
+  stroke-width: 0.85px;
+  // stroke-width: 0px;
+}

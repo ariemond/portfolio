@@ -1,0 +1,19 @@
+@keyframes animation-line {
+    0% {
+      left: 80px;
+    }
+  
+    100% {
+      left: 0;
+    }
+  }
+  
+  @keyframes animation-arrow {
+    0% {
+      width: 0;
+    }
+  
+    100% {
+      width: 100%;
+    }
+  }

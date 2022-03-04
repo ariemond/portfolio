@@ -1,0 +1,23 @@
+@import './partials/typography';
+@import './partials/mixins';
+@import './partials/variables';
+@import './partials//animations';
+
+html {
+    margin: auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 8%;
+    // max-width: 1280px;
+
+    @include desktop {
+      padding: 5%;
+    }
+}
+
+body {
+    overflow: hidden;
+    max-width: 1280px;
+    margin: 0 auto;
+    float: none; 
+  }

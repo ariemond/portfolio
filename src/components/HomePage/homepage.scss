@@ -1,0 +1,143 @@
+@import '../../styles/global.scss';
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to top,white 20%, $primary-pink 20%);
+
+    @include tablet {
+        background: linear-gradient(to top,white 17%, $primary-pink 17%);
+    }
+
+    &__title {
+        position: relative;
+    }
+    
+    &__title-words {
+        color: $primary-black;
+        -webkit-text-stroke: 0.1px white;
+        font-family: 'SourceSans';
+        font-size: 1rem;
+        font-weight: 300;
+
+        @include tablet {
+            font-size: 2rem;
+        }
+    }
+    
+}
+
+
+.link {
+  $self: &;
+  display: none;
+  align-items: center;
+  position: absolute;
+  padding: 5px;
+  text-decoration: none;
+  transform: rotate(-90deg) translate3d(-300px, 0, 0);
+
+  @include tablet {
+    display: inline-flex;
+    right: -10%;
+    top: 50%;
+  }
+
+  @include desktop {
+    right: -100px;
+    top: 250px;
+  }
+
+  @include wide {
+    top: 320px;
+  }
+
+  &__arrow {
+    display: inline-flex;
+
+    span {
+      position: relative;
+      width: 14px;
+      height: 2px;
+      border-radius: 2px;
+      overflow: hidden;
+      background: #BEBDBE;
+      z-index: 2;
+
+      &:nth-child(1) {
+        transform-origin: left bottom;
+        transform: rotate(45deg) translate3d(8px, -10px, 0);
+      }
+
+      &:nth-child(2) {
+        transform-origin: left bottom;
+        transform: rotate(-45deg);
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #C3002F;
+      }
+    }
+  }
+
+  &__line {
+    position: relative;
+    margin-left: -14px;
+    margin-right: 30px;
+    width: 150px;
+    height: 2px;
+    background: #BEBDBE;
+    overflow: hidden;
+    z-index: 1;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 80px;
+      width: 70px;
+      height: 2px;
+      background: $primary-pink;
+    }
+  }
+
+  &__text {
+    color: #4A4A4A;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    @include tablet {
+        font-size: 18px;
+    }
+  }
+
+  &:hover {
+    #{$self} {
+      &__line {
+        &:after {
+          animation: animation-line 1.5s forwards;
+        }
+      }
+
+      &__arrow {
+        span {
+          &:after {
+            animation: animation-arrow 1.5s forwards;
+            animation-delay: 1s;
+          }
+        }
+      }
+    }
+  }
+}

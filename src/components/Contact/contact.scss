@@ -1,0 +1,276 @@
+@import '../../styles/global.scss';
+
+.contact {
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(to top left, $primary-pink 20%, white 5%);
+
+
+    @include tablet {
+        height: 80vh;
+    }
+
+    @include desktop {
+        height: 90vh;
+    }
+
+    &__headers {
+        position: absolute;
+        font-family: 'SourceSans';
+        font-size: 1rem;
+        text-align: center;
+        top: 80px;
+        width: 100%;
+
+        @include tablet {
+            top: 100px;
+            width: 40%;
+            line-height: 18px;
+            font-size: 2rem;
+            text-align: left;
+        }
+    }
+
+    &__form-div {
+        position: absolute;
+        top: 210px;    
+        width: 100%;
+
+        @include tablet {
+            width: 70%;
+            top: 300px;
+            left: 120px;
+        }
+
+        @include desktop {
+            width: 65%;
+            top: 290px;
+            left: 200px;
+        }
+    }
+    
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__input {
+        width: 95%;
+        margin-bottom: 3%;
+        padding: 5%;
+        resize: none;
+        font-family: 'SourceSans';
+        border-top-style: hidden;
+        border-left-style: hidden;
+        border-right-style: hidden;
+        border-bottom-style: $primary-black 5px solid;
+        outline: none;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            outline: none;
+        }
+
+        @include tablet {
+            font-size: 1.2rem;
+        }
+
+        @include desktop {
+            width: 50%;
+            padding: 1%;
+        }
+    }
+    
+    &__button {
+        width: 50%;
+        height: 50px;
+        border-radius: 5px;
+        background-color: $primary-pink;
+        font-weight: 700;
+        margin-top: 5%;
+        color: white;
+        border: none;
+        font-family: 'SourceSans';
+
+        &:hover {
+            background-color: $cta-pink;
+        }
+
+        &:active, &:focus {
+            border: none;
+            outline: none;
+        }
+
+        @include tablet {
+            font-size: 1.2rem;
+            width: 30%;
+        }
+
+        @include desktop {
+            margin-top: 2%;
+            width: 20%;
+        }
+    }
+    
+    &__superb {
+        position: absolute;
+        display: inline-block;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        font-family: 'SourceSans';
+        top: 80%;
+        left: 0;
+        font-weight: 500;
+        font-size: 1.5rem;
+
+        @include tablet {
+            top: 85%;
+            font-size: 2rem;
+        }
+
+        @include desktop {
+            top: 80%;
+            justify-content: flex-start;
+            text-align: left;
+        }
+    }
+}
+
+
+.div {
+    display: none;
+    margin: 500px auto;
+
+    @include tablet {
+        display: flex;
+        margin: 750px auto;
+    }
+
+    @include desktop {
+        margin: 500px auto;
+    }
+}
+
+.drop {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: -30px;
+    margin: 0 auto;
+    background: $primary-pink;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    -moz-animation-name: drip;
+    -webkit-animation-name: drip;
+    animation-name: drip;
+    -moz-animation-timing-function: cubic-bezier(1,0,.91,.30);
+    -webkit-animation-timing-function: cubic-bezier(1,0,.91,.30);
+    animation-timing-function: cubic-bezier(1,0,.91,.30);
+    -moz-animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.drop:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 30px solid $primary-pink;
+    top: -22px;
+}
+
+.wave {
+    position: relative;
+    opacity: 0;
+    top: 0;
+    width: 2px;
+    height: 1px;
+    border: $cta-pink 7px solid;
+    -moz-border-radius: 300px / 150px;
+    -webkit-border-radius: 300px / 150px;
+    border-radius: 300px / 150px;
+    -moz-animation-name: ripple;
+    -webkit-animation-name: ripple;
+    animation-name: ripple;
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -moz-animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.wave:after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    top: -5px;
+    left: -5px;
+    width: 2px;
+    height: 1px;
+    border: $primary-pink 5px solid;
+    -moz-border-radius: 300px / 150px;
+    -webkit-border-radius: 300px / 150px;
+    border-radius: 300px / 150px;
+    -moz-animation-name: ripple-2;
+    -webkit-animation-name: ripple-2;
+    animation-name: ripple-2;
+    -moz-animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@keyframes ripple {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        width: 600px;
+        height: 300px;
+        border-width: 1px;
+        top: -100px;
+        opacity: 0;
+    }
+}
+
+@keyframes ripple-2 {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        width: 200px;
+        height: 100px;
+        border-width: 1px;
+        top: 100px;
+        left: 200px;
+    }
+}
+
+@keyframes drip {
+    to {
+        top: 500px;
+    }
+}
